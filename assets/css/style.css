@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 1px solid red;
+}
+
+h1 {
+    text-align: center;
+}
+
+.main-calc {
+    width: 40%;
+    margin: auto;
+}
+
+.ecran-calc {
+    width: 50%;
+    height: 50px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.clav-calc {
+    width: 50%;
+    height: 500px;
+    margin: auto;
+    border:  1px solid black;
+}
