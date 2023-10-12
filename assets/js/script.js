@@ -1,6 +1,7 @@
 console.log("Hello World !");
 
 const operandCalc = ["+","-","/","X"];
+const saisieEcran = [];
 
 // function injectHTML() {
     
@@ -51,12 +52,15 @@ let main = document.createElement("main");
 // ecranCalc.classList.add("main-calc");
 document.body.appendChild(main);
 
+
 // ------------------------------------Je crée mon écran ECRAN-------------------------
 let ecranCalc = document.createElement("div");
 console.log(ecranCalc);
 ecranCalc.classList.add("ecran-calc");
 ecranCalc.innerText = 0;
+console.log(ecranCalc);
 main.appendChild(ecranCalc);
+
 
 // ------------------------------------Je crée mon clavier CLAVIER------------------------
 
@@ -64,6 +68,7 @@ let clavCalc = document.createElement("div");
 console.log(clavCalc);
 clavCalc.classList.add("clav-calc");
 main.appendChild(clavCalc);
+
 
 // ------------------------Je crée mon pavé numérique PAVE NUMERIQUE-----------
 let pavNumCalc = document.createElement('div');
@@ -77,11 +82,34 @@ for (let i = 9; i >= 0 ; i--) {
     chiffreCalc.innerText = i;
     pavNumCalc.appendChild(chiffreCalc);
     console.log(chiffreCalc);
+
+    chiffreCalc.addEventListener("click", function saisieChiffre() {
+    saisieEcran.push(chiffreCalc.innerText)
+    ecranCalc.innerText = saisieEcran.join("");
+});
 }
+
+// egalCalc.addEventListener("click", function() {
+//     saisieEcran.push(egalCalc.innerText)
+//     ecranCalc.innerText = saisieEcran.join("");
+// });
+
+
+
+// -------------Je crée ma virgule----------------
 let virgCalc = document.createElement("button");
 virgCalc.innerText = ".";
 virgCalc.classList.add("chiffre-calc");
 pavNumCalc.appendChild(virgCalc);
+
+virgCalc.addEventListener("click", function sasieVirgule() {
+    saisieEcran.push(virgCalc.innerText)
+    ecranCalc.innerText = saisieEcran.join("")
+    
+})
+
+//------------------je crée mon AC-------------
+
 
 // ----------------------Je crée mon pavé des operandes OPERANDES--------------
 
@@ -104,7 +132,14 @@ operandCalc.forEach(operand => {
     opeCalc.classList.add('ope-calc')
     opeCalc.innerText = [operand];
     allOpeCalc.appendChild(opeCalc)
+
+    opeCalc.addEventListener("click", function() {
+    saisieEcran.push(opeCalc.innerText)
+    ecranCalc.innerText = saisieEcran.join("");
 });
+});
+
+
 
 // ---------------Je crée la div pouir le bouton égal--------------------
 
@@ -118,5 +153,9 @@ pavOpeCalc.appendChild(boiteEgalCalc)
 let egalCalc = document.createElement('button');
 console.log(egalCalc);
 egalCalc.classList.add('egal-calc');
-egalCalc.innerText = '=';
+egalCalc.innerText = ('='); 
 boiteEgalCalc.appendChild(egalCalc)
+// egalCalc.addEventListener("click", function() {
+//     saisieEcran.push(egalCalc.innerText)
+//     ecranCalc.innerText = saisieEcran.join("");
+// });
