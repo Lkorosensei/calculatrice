@@ -1,7 +1,7 @@
 console.log("Hello World !");
 
 const operandCalc = ["+","-","/","X"];
-const saisieEcran = [];
+let saisieEcran = [];
 
 // function injectHTML() {
     
@@ -109,6 +109,18 @@ virgCalc.addEventListener("click", function sasieVirgule() {
 })
 
 //------------------je crée mon AC-------------
+let acCalc = document.createElement("button")
+acCalc.innerText = "AC";
+acCalc.classList.add("Ac-calc");
+pavNumCalc.appendChild(acCalc)
+
+acCalc.addEventListener("click", function reset() {
+    let ecranCalul = document.querySelector(".ecran-calc");
+    saisieEcran = [];
+    ecranCalul.innerText = 0;
+    
+})
+
 
 
 // ----------------------Je crée mon pavé des operandes OPERANDES--------------
@@ -153,7 +165,7 @@ pavOpeCalc.appendChild(boiteEgalCalc)
 let egalCalc = document.createElement('button');
 console.log(egalCalc);
 egalCalc.classList.add('egal-calc');
-egalCalc.innerText = ('='); 
+egalCalc.innerText = ('=');
 boiteEgalCalc.appendChild(egalCalc)
 // egalCalc.addEventListener("click", function() {
 //     saisieEcran.push(egalCalc.innerText)

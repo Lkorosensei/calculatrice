@@ -74,6 +74,10 @@ main {
 
 }
 
+.chiffre-calc:active {
+    background-color: #555555;
+}
+
 .pav-ope-calc {
     width: 30%;
     display: flex;
@@ -99,6 +103,10 @@ main {
     
 }
 
+.ope-calc:active {
+    background-color: #fda934;
+}
+
 .boite-egal-calc {
     display: flex;
     flex-direction: column;
@@ -115,5 +123,25 @@ main {
     border-radius: 50%;
     cursor: pointer;
     border-style: none;
+}
+
+.egal-calc:active{
+    background-color: #fda934;
+}
+
+.Ac-calc{
+    width: 30%;
+    height: 100px;
+    margin: auto;
+    cursor: pointer;
+    font-size: 400%;
+    background-color: #A5A5A5;
+    color: black;
+    border-radius: 50% / 100%;
+    border-style: none;
+}
+
+.Ac-calc:active{
+    background-color:#bdbcbc;   
 }
 
