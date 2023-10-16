@@ -167,9 +167,7 @@ egalCalc.innerText = ('=');
 boiteEgalCalc.appendChild(egalCalc)
 
 egalCalc.addEventListener("click", function() {
-    let resultat = calculate();
-    console.log("Resultat : ", resultat);
-    ecranCalc.innerText = resultat;
+    ecranCalc.innerText = calculate();
     
     //     let numberfixed = resultat;
     // let res = resultat.toFixed('2');
