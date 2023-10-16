@@ -83,7 +83,7 @@ for (let i = 9; i >= 0 ; i--) {
     console.log(chiffreCalc);
 
     chiffreCalc.addEventListener("click", function saisieChiffre() {
-    saisieEcran.push(chiffreCalc.innerText)
+    saisieEcran.push(chiffreCalc.innerText);
     ecranCalc.innerText = saisieEcran.join("");
 });
 }
@@ -101,22 +101,22 @@ virgCalc.innerText = ".";
 virgCalc.classList.add("chiffre-calc");
 pavNumCalc.appendChild(virgCalc);
 
-virgCalc.addEventListener("click", function sasieVirgule() {
-    saisieEcran.push(virgCalc.innerText)
-    ecranCalc.innerText = saisieEcran.join("")
+virgCalc.addEventListener("click", function saisieVirgule() {
+    saisieEcran.push(virgCalc.innerText);
+    ecranCalc.innerText = saisieEcran.join("");
     
-})
+});
 
 //------------------je crée mon AC-------------
-let acCalc = document.createElement("button")
+let acCalc = document.createElement("button");
 acCalc.innerText = "AC";
 acCalc.classList.add("Ac-calc");
 pavNumCalc.appendChild(acCalc)
 
 acCalc.addEventListener("click", function reset() {
-    let ecranCalul = document.querySelector(".ecran-calc");
+    ecranCalc = document.querySelector(".ecran-calc");
     saisieEcran = [];
-    ecranCalul.innerText = 0;
+    ecranCalc.innerText = 0;
     
 })
 
@@ -136,7 +136,7 @@ console.log(allOpeCalc);
 allOpeCalc.classList.add("all-ope-calc")
 pavOpeCalc.appendChild(allOpeCalc)
 
-// -----Je crée les boutons pour les opérandes----
+// -----Je crée les boutons pour les opérateurs----
 operandCalc.forEach(operateur => {
     let opeCalc = document.createElement('button')
     console.log(opeCalc);
@@ -171,21 +171,20 @@ egalCalc.addEventListener("click", function() {
     console.log("Resultat : ", resultat);
     ecranCalc.innerText = resultat;
     
-        let numberfixed = resultat;
-    let res = resultat.toFixed(2);
-    console.log(res);
-    ecranCalc.innerText = res;
-    
-    }   
-    );
+    //     let numberfixed = resultat;
+    // let res = resultat.toFixed('2');
+    // console.log(res);
+    // ecranCalc.innerText = res;  
+    });
 //------------Je crée ma fonction calculate----------
 
 function calculate() {
     // console.log("Saisies écran : ", saisieEcran); //join()
     // console.log(saisieEcran.join(''));
-    let result = eval(saisieEcran.join(''));
+    let resultat = eval(saisieEcran.join(''));
     // console.log(result);
-    return result;
+    return resultat;
     // console.log(eval('2+2'));
 
 }
+
