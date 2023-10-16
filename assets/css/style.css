@@ -104,7 +104,8 @@ main {
 }
 
 .ope-calc:active {
-    background-color: #fda934;
+    background-color: white;
+    color: #FF9400;
 }
 
 .boite-egal-calc {
@@ -126,7 +127,8 @@ main {
 }
 
 .egal-calc:active{
-    background-color: #fda934;
+    background-color: white;
+    color: #FF9400;
 }
 
 .Ac-calc{
@@ -142,6 +144,7 @@ main {
 }
 
 .Ac-calc:active{
-    background-color:#bdbcbc;   
+    background-color:white;
+    color: black;
 }
 
