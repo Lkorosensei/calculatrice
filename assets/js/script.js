@@ -53,13 +53,36 @@ let main = document.createElement("main");
 document.body.appendChild(main);
 
 
+let boiteEcranTotal = document.createElement("div")
+boiteEcranTotal.classList.add("boite-ecran-total")
+main.appendChild(boiteEcranTotal)
 // ------------------------------------Je crée mon écran ECRAN-------------------------
 let ecranCalc = document.createElement("div");
 console.log(ecranCalc);
 ecranCalc.classList.add("ecran-calc");
 ecranCalc.innerText = 0;
-main.appendChild(ecranCalc);
+boiteEcranTotal.appendChild(ecranCalc);
 
+// -------------------------Je crée mon bouton C------------------
+let boiteEffacerCalc = document.createElement("div");
+boiteEffacerCalc.classList.add("boite-effacer-calc");
+boiteEcranTotal.appendChild(boiteEffacerCalc)
+
+let effacerCalc = document.createElement("button");
+console.log(effacerCalc);
+effacerCalc.classList.add("effacer-calc");
+effacerCalc.innerText = "C";
+boiteEffacerCalc.appendChild(effacerCalc);
+
+effacerCalc.addEventListener("click", function retour() {
+    saisieEcran.pop() ;
+    ecranCalc.innerText = ecranCalc.innerText.slice(0, -1);
+    if (ecranCalc.innerText.slice() == 0) {
+        ecranCalc.innerText = 0
+    }
+    console.log("Mon écran slice est : ", ecranCalc.innerText.slice());
+    console.log("Le tableau saisie écran est : ", saisieEcran);
+})
 
 // ------------------------------------Je crée mon clavier CLAVIER------------------------
 
@@ -114,7 +137,7 @@ acCalc.classList.add("Ac-calc");
 pavNumCalc.appendChild(acCalc)
 
 acCalc.addEventListener("click", function reset() {
-    ecranCalc = document.querySelector(".ecran-calc");
+    // ecranCalc = document.querySelector(".ecran-calc");
     saisieEcran = [];
     ecranCalc.innerText = 0;
     
@@ -148,6 +171,9 @@ operandCalc.forEach(operateur => {
     saisieEcran.push(opeCalc.innerText)
     console.log(saisieEcran);
     ecranCalc.innerText = saisieEcran.join("");
+    if (saisieEcran = operateur) {
+        
+    }
 });
 });
 
